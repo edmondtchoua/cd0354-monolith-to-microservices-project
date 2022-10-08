@@ -22,9 +22,9 @@ spec:
         - containerPort: 8080
         resources:
           limits:
-            cpu: 500m
+            cpu: 50m
           requests:
-            cpu: 200m
+            cpu: 20m
         envFrom:
           - configMapRef:
               name: env-configmap
