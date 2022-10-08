@@ -6,7 +6,7 @@ metadata:
   labels:
     app: backend-feed
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: backend-feed
@@ -20,6 +20,11 @@ spec:
         image: 25tor/udagram-api-feed:v1
         ports:
         - containerPort: 8080
+        resources:
+          limits:
+            cpu: 500m
+          requests:
+            cpu: 200m
         envFrom:
           - configMapRef:
               name: env-configmap
